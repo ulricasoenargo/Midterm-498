@@ -1,0 +1,273 @@
+
+//Typeface //
+//$font-folder:'fonts/Archer';
+//@include make-font-face('Archer-Light','#{$font-folder}/Archer-Light-Pro.otf','otf');
+
+//@include make-font-face('Archer-Book','#{$font-folder}/Archer-Book-Pro.otf','otf');
+
+//@include make-font-face('Archer-Bold','#{$font-folder}/Archer-Bold-Pro.otf','otf');
+
+@font-face {
+    font-family: Archer-Light;
+    src: url(fonts/Archer/Archer-Light-Pro.otf);
+}
+
+@font-face {
+    font-family: Archer-Bold;
+    src: url(fonts/Archer/Archer-Bold-Pro.otf);
+}
+
+@font-face {
+    font-family: Archer-Book;
+    src: url(fonts/Archer/Archer-Book-Pro.otf);
+}
+
+@font-face {
+    font-family: Avenir-Book;
+    src: url(fonts/Avenir/AvenirLTStd-Book.otf);
+}
+
+@font-face {
+    font-family: Avenir-Heavy;
+    src: url(fonts/Avenir/AvenirLTStd-Heavy.otf);
+}
+
+.compact{
+	list-style-type:none;
+	margin-top:0;
+	margin-bottom:0;
+	padding-left:0;
+}
+
+.clearfix:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+
+
+//
+// Navbar
+// --------------------------------------------------
+
+header{
+	overflow:hidden;
+}
+.navbar{
+	margin-top: 20px;
+}
+
+.logo{
+	text-indent:-9999px;
+	background-image: url('images/growlocallogo.png');
+	width:240px;
+	height:38px;
+}
+
+
+.nav {
+	margin-top:20px;
+	margin-bottom:20px;
+	
+	ul{
+	float:right;
+}
+
+	& > ul {
+		@extend .compact;
+		padding-bottom:1px;
+	}
+	ul>li{
+	font-family:'Archer-Book';
+	display:inline;
+	color:#f6921e;
+	padding-right:10px;
+	padding-left:10px;
+	margin-left:20px;
+	}
+	a{
+		display:inline;
+		background-color:transparent;
+		color:$color-mandarinorange;
+		text-decoration:none;
+		padding-bottom:2px;
+		padding-left:5px;
+		padding-right:5px;
+	}
+	a:hover, .active a{
+		color:white;
+		text-decoration:none;
+	}
+	a:hover{
+		//color: darken($color-mandarinorange, 10%);
+		font-family: 'Archer-Bold';
+		color:$color-mandarinorange;
+		border-bottom-style:solid;
+		border-bottom-color:$color-leafgreen;
+		border-bottom-width:3px;
+	}
+	.active a{
+		color:$color-mandarinorange;
+	}
+}
+
+//classes//
+.sectiontitle{
+	padding-top: 20px;
+}
+
+
+
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: 400;
+  font-size:$btn-font-size-default;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: $color-btn;
+  padding:10px 30px;
+  outline: 0; //turn off chrome outline
+  border: 0 solid transparent;
+  white-space: nowrap;
+  &:hover{
+		background-color: lighten($color-btn,20%);
+  }
+  &:active{
+  	top: 2px;
+  }
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+	 	 color: $btn-default-color ;
+	 	 background-color: $btn-default-bg;
+	 	  &:hover{
+		background-color: darken($btn-default-bg,20%);
+  }
+
+}
+.btn-small {
+	 	font-size: 0.8em;
+	 	&:hover{
+		background-color: darken($btn-default-bg,20%);}
+}
+
+.btn-medium {
+	 	font-size: 0.8em;
+	 	padding:15px 30px;
+	 	&:hover{
+		background-color: darken($btn-default-bg,20%);}
+}
+
+.btn-large {
+	 	font-size: 0.8em;
+	 	padding:17px 30px;
+	 	&:hover{
+		background-color: darken($btn-default-bg,20%);}
+}
+.btn-submit {
+		color: $btn-reverse-color;
+	 	background-color: $btn-submit-bg;
+	 	&:hover{
+		background-color: darken($btn-submit-bg,20%);}
+}
+
+.btn-cancel {
+		color: $btn-reverse-color ;
+	 	background-color: $btn-cancel-bg;
+	 	&:hover{
+		background-color: darken($btn-cancel-bg,20%);}
+}
+
+.btn-back {
+		color: $btn-reverse-color ;
+	 	background-image: gradient-named-darken(0);
+	 	&:hover{
+		background-image: gradient-named-darken(.1);}
+}
+
+.btn-circle{
+	display:block;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    text-align:center;
+    padding: 20px;
+}
+.btn-active{
+box-shadow:0 0 0 1px rgba(0,0,0,.15) inset,0 0 6px rgba(0,0,0,.2) inset
+}
+.btn-disable{
+	color: $btn-reverse-color ;
+	background-color: $btn-default-bg;
+	cursor: not-allowed;
+	&:hover{
+	background-color: $btn-default-bg;}
+	
+}
+
+
+
+
+h1.headline{
+	font-family: 'Open Sans', sans-serif;
+	color: #ffffff;
+	padding-top: 180px;
+	line-height: 1.4;
+	font-size: 2em;
+	text-align: center;	
+}
+
+
+
+p.subheadline{
+	font-family: Archer-Light;
+	color:$color-white;
+	padding-top:10px;
+	line-height:1.4;
+	font-size: 1.2em;
+	text-align:center;	
+}
+
+h1.sectiontagline {
+	font-family: 'Open Sans', sans-serif;
+	color:$color-white;
+	padding-top: 120px;
+	line-height:1.6;
+	text-transform:uppercase;
+	font-weight:300;
+}
+
+
+h3.sectiontext{
+	font-family: 'Open Sans', sans-serif;
+	color:lighten($color-leafgreen,30%);
+	line-height:1.4;
+	font-weight:300;
+	padding-bottom: 20px;
+}
+
+h2.question{
+	font-family: 'Open Sans', sans-serif;
+	color:$color-leafgreen;
+	line-height:1.4;
+	font-weight:300;
+}
+
+h4.answer{
+	font-family: 'Open Sans', sans-serif;
+	color:#4c4f4f;
+	line-height:1.4;
+	font-weight:300;
+	padding-bottom: 30px;
+}

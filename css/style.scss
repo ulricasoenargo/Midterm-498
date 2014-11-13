@@ -1,0 +1,13 @@
+@import "partials/variables";
+@import "partials/utilities";
+@import "partials/reset";
+@import "partials/classes";
+@import "partials/grids";
+
+
+@import "partials/theme";
+
+// sass --watch style.scss:style.nested.css 	=>style nested
+// sass --watch style.scss:style:expanded.css 	=>style expanded
+// sass --watch style.scss:style.compact.css 	=>style compact
+// sass --watch style.scss:style.compressed.css =>style compressed

@@ -1,0 +1,42 @@
+@include container-make;
+@include columns-make;
+@include offset-make;
+@include pull-make;
+@include utilities-make;
+.row{
+	margin-left: -($gutter-size/2);
+	margin-right: -($gutter-size/2);
+	float:left;
+}
+
+.full{
+	width:100%;
+	margin:0 auto;
+}
+/*
+.column {
+	float:left;
+	padding-left: $gutter-size / 2;
+	padding-right:$gutter-size / 2;
+}
+
+[class^=col-] {
+	float:left;
+	padding-left: $gutter-size / 2;
+	padding-right:$gutter-size / 2;
+}
+*/
+@include column-make;
+
+@each $prefix,$pre-value in $container-width {
+	
+	@media (min-width:$pre-value){
+		@include container-make(#{$prefix});
+		@include columns-make(#{$prefix});
+		@include offset-make(#{$prefix});
+		@include pull-make(#{$prefix});
+
+	}
+
+}
+

@@ -1,0 +1,58 @@
+// CSS RESETS
+* {
+	box-sizing:border-box;
+}
+
+body {
+	font-size:100%;
+	line-height: 1.2em;
+}
+
+body, h1, h2, h3, h4, h5, p, blockquote, figure, aside {
+	margin: 0;
+}
+
+header, footer, aside, nav, section, article, figure {
+	display: block;
+}
+
+h1{
+	font-size: 1.75em;
+}
+
+h2{
+	font-size:1.35em;
+}
+
+h3{
+	font-size:1.15em;
+}
+
+h4{
+	font-size:1em;
+}
+
+h5{
+	font-size:1em;
+}
+
+h6{
+	font-size:0.75em;
+}
+
+small {
+	font-size: 0.6em;
+	opacity:0.7;
+}
+
+table {
+	display:table;
+	border-collapse:collapse;
+	width:100%;
+}
+
+input, textarea, td, th, tr, table{
+	font-size:inherit;
+	font-family:inherit;
+}
+

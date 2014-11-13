@@ -1,0 +1,68 @@
+$gutter-size:10px; //use rem instead of em
+$column-length: 12;
+
+//Sass map is an array with named indexes 
+$container-width:(
+	xs:0,
+	sm:480px,
+	md:640px,
+	lg:960px,
+	xl:1200px,
+);
+
+// Sass list is an array linear array
+$size-shortnames:("xs","sm","md","lg","xl");
+
+
+
+ $container-xs-width: map-get($container-width,"xs");
+ $container-sm-width: 640px;
+ $container-md-width: 800px;
+ $container-lg-width: 1000px;
+ $container-xl-width: 1200px;
+
+$color-red: #e11;
+$color-warning: $color-red;
+
+$color-yellow: rgb(245,240,40);
+$color-alert: $color-yellow;
+
+$color-mandarinorange: #f6921e;
+$color-peach: #faaf40;
+$color-leafgreen: #73b344;
+$color-white: #ffffff;
+$color-soil:#6D482E;
+
+
+$color-green: #e11;
+$color-confirm: $color-green;
+//== Buttons
+//
+//## For each of Ulrica's buttons, define text, background and border color.
+
+
+$gray: #CECECE !default;   // #333
+
+
+$btn-font-weight: normal !default;
+$btn-font-size-default: 1em;
+$color-btn: $gray;
+
+$btn-default-color: #6D6D6D !default;
+$btn-reverse-color: white !default;
+$btn-submit-bg: #14C406 !default;
+$btn-default-bg: $gray !default;
+$btn-cancel-bg: #C1064E !default;
+$btn-back-bg: #E8990C !default;
+
+
+@function gradient-named-darken($percentage){
+	@return repeating-linear-gradient(
+		45deg,
+		darken(#e6f728,percentage($percentage)),
+		darken(#f7d428,percentage($percentage)) 10px,
+		darken(#effa73,percentage($percentage)) 10px,
+		darken(#effa73,percentage($percentage)) 20px
+
+		);
+}

@@ -1,0 +1,99 @@
+@mixin container-make($prefix:''){
+	.container {
+		@include center-in-parent;//already defined in classes.scss
+
+		@if($prefix=='xl'){
+			width:map-get($container-width,$prefix);
+			} @else if($prefix=='lg'){
+			width:map-get($container-width,$prefix);
+			} @else {
+				width: calc(100% - #{$gutter-size}); //or 100%;which means liquid
+			}
+	}
+}
+@mixin columns-make($prefix:''){
+	@if ($prefix != ''){
+		$prefix: "-#{$prefix}";
+	}
+	@for $i from 1 through $column-length{
+		.col#{$prefix}-#{$i} {
+			//@extend .column
+			width:percentage( $i / $column-length );
+		}
+	}
+}
+
+@mixin offset-make($prefix:''){
+	@if ($prefix != ''){
+		$prefix: "-#{$prefix}";
+	}
+	@for $i from 1 through $column-length{
+		.offset#{$prefix}-#{$i - 1} {
+			//@extend .column
+			margin-left:percentage( ($i - 1) / $column-length );
+		}
+	}
+}
+
+
+@mixin pull-make($prefix:''){
+	@if ($prefix != ''){
+		$prefix: "-#{$prefix}";
+	}
+	@for $i from 1 through $column-length{
+		.pull#{$prefix}-#{$i - 1} {
+			//@extend .column
+			margin-right:percentage( ($i - 1) / $column-length );
+		}
+	}
+}
+
+@mixin utilities-make($prefix:''){
+	@if($prefix !=''){
+		$prefix: "(#{prefix}";
+	}
+	.d#{$prefix}-n{
+	display:none;
+	}
+	.d#{$prefix}-b{
+	display:block;
+	}
+	.d#{$prefix}-ib{
+	display:inline-block;
+	}
+}
+@mixin center-in-parent {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+@function class-stack($type,$middlefix,$size,$list:''){
+	@for $i from 1 through $size{
+		@if($list!=''){
+			$list:"#{$list},";
+		} 
+		$list: "#{$list}.#{$type}#{$middlefix}-#{$i}";
+	}
+	@return $list;
+}
+
+@mixin column-make(){
+	$list:class-stack('col',"",$column-length,"");;
+	@each $key,$value in $container-width {
+		$list: class-stack('col',"-#{$key}",$column-length,$list);
+	}
+	#{$list} {
+		float:left;
+		padding-left: $gutter-size / 2;
+		padding-right:$gutter-size / 2;
+			}
+}
+
+@mixin make-font-face($font-name,$font-src,$font-format:'ttf') {
+	@font-face {
+	  font-family: $font-name;
+	  src: url('#{$font-src}') format('#{$font-format}');
+	}
+}
+
+

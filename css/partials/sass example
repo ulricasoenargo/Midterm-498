@@ -1,0 +1,88 @@
+//Sass map is an array with named indexes 
+$container-width:(
+	xs:0,
+	sm:480px,
+	md:640px,
+	lg:960px,
+	xl:1200px,
+);
+
+// Sass list is an array linear array
+$size-shortnames:("xs","sm","md","lg","xl");
+
+
+
+// If statement is a way to make comparisson / assignment if it is true do this code
+//@if(){} -- if (this) then do {this}
+@if(1<2){
+//code to do	
+}
+
+
+/* Operators
+COMPARISSON Operators
+< less than
+> greater than
+<= less than or equal
+>= greater than or equal
+== is equal to
+
+ASSIGNMENT Operators
+= asign value of he right side to the right side
++= examples : $i += 1 is the same as $i = $i + 1
+-=
+*=
+/=
+
+MATH Operators
++ addition
+- subtraction
+* multiplication
+/ division
+
+*/
+
+
+// if else if else (when writing code below the spaces between the code doesn't matter BUT NO SPACE BETWEEN IF AND (  )
+// you can have as many else you want but the last else does not have the if
+@if ($num--0){
+	//code to do
+	} @else if($num>5){
+	//code to do
+	} @else if($num<5){
+	//code to do
+	} @else {
+	//code to do
+	}
+
+// For loop is basically going through a set of numbers of thing and use i as an iterator it can be i/num/whatever
+@for $i from 1 through 9 {
+	//do code here
+	width:$i*100+"px";
+}
+
+// Each loop allows you to pop through thing to the map and assign key and value to the variable
+@each $key, $value in $container-width{
+	$container-{$key}-width: $value;
+}
+
+
+
+// Mixins allows you to set a whole code block that you want to have
+@mixin my-mixin{
+	.container {
+		width:50px;
+	}
+}
+
+@mixin make-container($numb:800) {
+	.container{
+		width: $num + "px";
+	}
+}
+
+@include make-container(600);
+
+
+
+map-get($container-width,"xs");
